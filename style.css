@@ -1,44 +1,81 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-html,
-body,
-.wrapper {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
 body {
+  /* Background Image */
+  background-image: url("https://www.dataonenetworks.com/blog/wp-content/uploads/2017/07/iStock-524882170.jpg");
+  
+  /* Image positioning: centered vertically, horizontally, not to repeat and the show the picture
+    more than once. Cover will make the picture resize based on the container size. */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color:#464646;
+}
+
+a {
+  color: white;
+}
+
+h1 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Helvetica;
+  font-weight: 300;
+  font-size: 30px;
+  padding: 0px;
+  padding-top: 60px;
+  padding-bottom: 35px;
+  margin-left: 20px;
+  color: white;
+}
+h2 {
+  font-family: Helvetica;
+  padding-top: 20px;
+  padding-bottom: 75px;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 40px;
+  z-index: 9999;
+  position: fixed;
+}
+
+.inner {
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  }
+
+.navbar a {
+  display: inline-block;
+  border: 1px solid #fff;
+  font-size: 14px;
+  line-height: 24px;
+  border-radius: 3px;
+  padding: 2px 15px;
+  text-decoration: none;
+  margin-top: 5px;
   font-family: helvetica;
 }
 
-.wrapper {
-  padding-top: 30px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-header {
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
-  color: transparent;
-}
-
+/* Card Semantics below: ".card" */
 .card {
   background-color: transparent;
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  text-transform: uppercase;
   border-radius: 5px;
   border-width: 1px;
   box-shadow: transparent;
-  color: hsl(206, 17%, 28%);
-  font-size: 18px;
-  margin: 0 auto;
-  max-width: 800px;
-  padding: 30px 40px;
+  max-width: 100%;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 75px;
+  margin-right: 60px;
+  margin-left: 15px;
 }
 
 .card-header::after {
@@ -46,7 +83,7 @@ header {
   display: block;
   width: 100%;
   background: transparent;
-  height: 2px;
+  height: 200px;
 }
 
 .card-body {
@@ -71,6 +108,7 @@ header {
   clear: both;
 }
 
+/* Button semantics */
 .btn {
   border: none;
   background-color: hsl(360, 91%, 36%);
@@ -81,7 +119,7 @@ header {
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 55px 16px 16px 20px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
@@ -92,48 +130,49 @@ button[disabled] {
   background: transparent;
 }
 
-.float-right {
-  float: right;
-}
-
-.container-fluid {
-  background: transparent;
-}
 
 #password {
+  color: black;
+  background-color: white;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  border: none;
   display: block;
   width: 100%;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-left: 15px;
   padding-right: 15px;
-  padding-bottom: 85px;
+  padding-bottom: 20px;
   font-size: 1.2rem;
+  font-family: helvetica;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  border: 2px dashed #c0c7cf;
-  border-radius: 6px;
+  margin-right: 20px;
+  margin-left: 10px;
+  border: 4px solid #ffffff;
+  border-radius: 0px;
   resize: none;
   overflow: hidden;
 }
-
-@media (max-width: 1200px) {
+/* Media queries below for view port control */
+@media (max-width: 800px) {
   .btn {
     font-size: 1rem;
-    margin: 16px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
     padding: 10px 15px;
-  }
-
-  #password {
-    font-size: 1rem;
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
   .btn {
     font-size: 0.8rem;
   }
+
+@media only screen and (max-width: 767px) {
+  body {
+    /* The file size of this background image is 93% smaller
+      * to improve page load speed on mobile internet connections */
+    background-image: url(images/background-photo-mobile-devices.jpg);
+  }
+  }  
